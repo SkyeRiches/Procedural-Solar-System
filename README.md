@@ -3,9 +3,7 @@ This is a project I'm currently working on where the aim is to create a system i
 
 ​
 
-The data of each planet will be determined by choosing a random planet from the NASA exo-planet database (https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PS)
-
-and the appearance will be determined by the temperature of the planet and how Earth-like the planet is.
+The data of each planet will be determined by choosing a random planet from the NASA exo-planet database (https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PS) and the appearance will be determined by the temperature of the planet and how Earth-like the planet is.
 
 ​
 
