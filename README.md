@@ -24,3 +24,5 @@ A possible extended aim of the project is to allow the user to manually change t
 - Merge the planet terrain functionality created at the start, with the solar system functionality in order to have a random solar system where the planets have terrain
 - Modify the terrain system to take in data from the NASA database for exo-planet temperature and similarity to Earth
 - Implement a system to allow a user to click on a planet during run time and modify key values, such as; mass, radius, temperature and terrain roughness. The camera should also focus on that planet and follow it in its orbit whilst it is selected
+
+# Current-Progress
