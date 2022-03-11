@@ -15,7 +15,7 @@ A possible extended aim of the project is to allow the user to manually change t
 
 
 # Design-Brief
-- ~~Create a system for allowing designers to create a custom planet with procedural terrain
+- ~~Create a system for allowing designers to create a custom planet with procedural terrain~~
 - ~~Create a shader that adds color to the planet based on terrain height and ocean depth
 - ~~Create the ability for a designer to add biomes to a planet which will have different color tints to indicate different temperatures
 - ~~Implement orbital physics using Newtons law of universal gravity and give planet a spin rate that will be determined by the solar day of the planet
