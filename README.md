@@ -26,4 +26,7 @@ A possible extended aim of the project is to allow the user to manually change t
 - Implement a system to allow a user to click on a planet during run time and modify key values, such as; mass, radius, temperature and terrain roughness. The camera should also focus on that planet and follow it in its orbit whilst it is selected
 
 # Current-Progress
+- The planet terrain generation has been completed
+- Newton's law of universal gravitation has been implemented in a separate scene using our solar system as a model to test it as seen here:
 https://www.youtube.com/watch?v=XNZyV56nFJc
+- A basic free-cam has been developed to allow for movement around the scene
