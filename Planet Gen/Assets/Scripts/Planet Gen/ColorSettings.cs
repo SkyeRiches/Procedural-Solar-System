@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Stores all the values for the settings of the color for the planet and its biomes
+/// </summary>
 [CreateAssetMenu()]
 public class ColorSettings : ScriptableObject
 {
@@ -9,6 +12,9 @@ public class ColorSettings : ScriptableObject
     public BiomeColorSettings biomeColorSettings;
     public Gradient oceanColor;
 
+    /// <summary>
+    /// subclass that holds values specific to each biome of the planet
+    /// </summary>
     [System.Serializable]
     public class BiomeColorSettings
     {

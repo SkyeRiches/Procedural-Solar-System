@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// stores the values to be used to adjust the noise on the planet in order to be able to modify how the terrain looks
+/// </summary>
 [System.Serializable]
 public class NoiseSettings
 {

@@ -342,7 +342,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 548721432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc3e7e5972c331647bb8f20b9d3d721d, type: 3}
+  m_Script: {fileID: 11500000, guid: dabb754ec86c0354a81fdceba214711f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet: {fileID: 736042281863387428, guid: 9d4771d156e3bd64682b4ce311858b4c, type: 3}
@@ -589,8 +589,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 548721433}
-        m_TargetAssemblyTypeName: PlanetManager, Assembly-CSharp
-        m_MethodName: CreatePlanet
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: SpawnTerrainPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

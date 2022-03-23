@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A class to create a peak and ridge effect on the terrain to allow for mountainous like terrain
+/// </summary>
 public class RigidNoiseFilter : INoiseFilter
 {
     Noise noise = new Noise();
@@ -21,10 +24,14 @@ public class RigidNoiseFilter : INoiseFilter
 
         for (int i = 0; i < settings.numLayers; i++)
         {
+            // invert the absolue value of the point
             float v = 1 - Mathf.Abs(noise.Evaluate(point * frequency + settings.centre));
+            // makes ridges more pronounced
             v *= v;
+            // weight the noise to be heavier on the ridges so there is more noise detail on them
             v *= weight;
-            weight =Mathf.Clamp01(v * settings.weightMultiplier);
+            // clamp the weight between 0 and 1
+            weight = Mathf.Clamp01(v * settings.weightMultiplier);
 
             noiseValue += v * amplitude;
             frequency *= settings.roughness;

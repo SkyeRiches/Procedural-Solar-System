@@ -9,14 +9,20 @@ public class GenerateStar : MonoBehaviour
     private float starSpin;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        starDiameter = Random.Range(100, 1000);
-        StarInfo.starDiameter = starDiameter;
-        transform.localScale *= starDiameter;
-        starMass = Random.Range(100000, 500000);
-        StarInfo.starMassValue = starMass;
-        transform.GetComponent<Rigidbody>().mass = starMass;
+        //starDiameter = Random.Range(100, 1000);
+        //StarInfo.starDiameter = starDiameter;
+        //transform.localScale *= starDiameter;
+
+        //starMass = Random.Range(100000, 500000);
+        //StarInfo.starMassValue = starMass;
+        //transform.GetComponent<Rigidbody>().mass = starMass;
+
+
+        StarInfo.starDiameter = transform.localScale.x;
+        StarInfo.starMassValue = transform.GetComponent<Rigidbody>().mass;
+        starSpin = 10f;
     }
 
     private void Update()

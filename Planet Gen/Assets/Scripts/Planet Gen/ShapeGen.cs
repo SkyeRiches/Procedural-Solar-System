@@ -19,6 +19,9 @@ public class ShapeGen
         elevationMinMax = new MinMax();
     }
 
+    /// <summary>
+    /// calculates the value of the point on the sphere without scaling it to the planets size, this is the raw elevation value
+    /// </summary>
     public float CalculateUnscaledElevation(Vector3 pointOnUnitSphere)
     {
         float firstLayerValue = 0;
@@ -26,9 +29,12 @@ public class ShapeGen
 
         if (noiseFilters.Length > 0)
         {
+            // adjusts the first layer's value to be between 0 and 1
             firstLayerValue = noiseFilters[0].Evaluate(pointOnUnitSphere);
+
             if (shapeSettings.noiseLayers[0].enabled)
             {
+                // if the first layer is enabled then that is the value of elevation
                 elevation = firstLayerValue;
             }
         }
@@ -37,7 +43,9 @@ public class ShapeGen
         {
             if (shapeSettings.noiseLayers[i].enabled)
             {
+                // if using the first layer as a mask then that is the modifier for the elevation, otherwise it is 1
                 float mask = (shapeSettings.noiseLayers[i].useFirstLayerAsMask) ? firstLayerValue : 1;
+                // increment the elevation value by the points value between 0 and 1 and multiply it by the mask value
                 elevation += noiseFilters[i].Evaluate(pointOnUnitSphere) * mask;
             }
         }
@@ -47,7 +55,9 @@ public class ShapeGen
 
     public float GetScaledElevation(float unscaledElevation)
     {
+        // set the elevation to be the largest value on the planet
         float elevation = Mathf.Max(0, unscaledElevation);
+        // scale the elevation by the size of the planet
         elevation = shapeSettings.planetRadius * (1 + elevation);
         return elevation;
     }
