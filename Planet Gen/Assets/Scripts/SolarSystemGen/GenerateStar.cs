@@ -23,6 +23,7 @@ public class GenerateStar : MonoBehaviour
         StarInfo.starDiameter = transform.localScale.x;
         StarInfo.starMassValue = transform.GetComponent<Rigidbody>().mass;
         starSpin = 10f;
+        GhostCelestials.ghostCelestials.Add(gameObject);
     }
 
     private void Update()

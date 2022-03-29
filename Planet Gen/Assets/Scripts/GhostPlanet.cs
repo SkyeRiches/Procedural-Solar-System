@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlanetManager : MonoBehaviour
+public class GhostPlanet : MonoBehaviour
 {
     [SerializeField] const float G = 300f;
     private GameObject sun;
@@ -16,13 +16,13 @@ public class PlanetManager : MonoBehaviour
 
     private void Start()
     {
-        if (CelestialList.celestialBodies.Count > 1)
+        if (GhostCelestials.ghostCelestials.Count > 1)
         {
-            foreach (CelestialBody ce in CelestialList.celestialBodies)
+            foreach (GameObject ce in GhostCelestials.ghostCelestials)
             {
-                foreach (CelestialBody ce2 in CelestialList.celestialBodies)
+                foreach (GameObject ce2 in GhostCelestials.ghostCelestials)
                 {
-                    InitialVelocity(ce.rb, ce2.rb);
+                    InitialVelocity(ce.GetComponent<Rigidbody>(), ce2.GetComponent<Rigidbody>());
                 }
             }
         }
@@ -33,7 +33,6 @@ public class PlanetManager : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        if (CelestialList.celestialBodies == null) CelestialList.celestialBodies = new List<CelestialBody>();
         if (GhostCelestials.ghostCelestials == null) GhostCelestials.ghostCelestials = new List<GameObject>();
     }
 
@@ -41,9 +40,9 @@ public class PlanetManager : MonoBehaviour
     /// calculate and apply the attractive force between two celestial objects using the rigidbody component
     /// and Newtons law of universal gravitation
     /// </summary>
-    void Attract(Rigidbody rb, CelestialBody objToAttract)
+    public void Attract(Rigidbody rb, GameObject objToAttract)
     {
-        Rigidbody rbToAttract = objToAttract.rb;
+        Rigidbody rbToAttract = objToAttract.GetComponent<Rigidbody>();
 
         // Calculate the magnitude of the distance between the two celestial bodies
         Vector3 vec3Dir = rb.position - rbToAttract.position;
@@ -82,13 +81,13 @@ public class PlanetManager : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        if (CelestialList.celestialBodies.Count > 1)
+        if (GhostCelestials.ghostCelestials.Count > 1)
         {
-            foreach (CelestialBody ce in CelestialList.celestialBodies)
+            foreach (GameObject ce in GhostCelestials.ghostCelestials)
             {
-                foreach (CelestialBody ce2 in CelestialList.celestialBodies)
+                foreach (GameObject ce2 in GhostCelestials.ghostCelestials)
                 {
-                    Attract(ce2.rb, ce);
+                    Attract(ce2.GetComponent<Rigidbody>(), ce);
                 }
             }
         }

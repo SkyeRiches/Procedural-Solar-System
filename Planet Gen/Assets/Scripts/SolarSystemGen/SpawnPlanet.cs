@@ -18,7 +18,9 @@ public class SpawnPlanet : MonoBehaviour
 
     private void Start()
     {
-        gameObject.GetComponent<PlanetManager>().SetSun(Instantiate(sun, transform.position, transform.rotation));
+        var star = Instantiate(sun, transform.position, transform.rotation);
+        gameObject.GetComponent<PlanetManager>().SetSun(star);
+        gameObject.GetComponent<OrbitPaths>().Sun = star;
     }
 
     public void SpawnCelestialBody()
@@ -46,6 +48,9 @@ public class SpawnPlanet : MonoBehaviour
         spawnedPlanet = Instantiate(planet, planetPos, transform.rotation);
         SetPlanet();
         transform.GetComponent<PlanetManager>().NewPlanetVel(spawnedPlanet);
+
+        gameObject.GetComponent<OrbitPaths>().SimulateTrajectory(spawnedPlanet, spawnedPlanet.transform.position);
+
 
     }
 

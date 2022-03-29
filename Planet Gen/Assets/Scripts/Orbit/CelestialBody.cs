@@ -5,7 +5,6 @@ using UnityEngine;
 public class CelestialBody : MonoBehaviour
 {
     public Rigidbody rb;
-
     /// <summary>
     /// When an object with this script is enabled, it will be added to the list of celestial bodies in the scene
     /// </summary>
