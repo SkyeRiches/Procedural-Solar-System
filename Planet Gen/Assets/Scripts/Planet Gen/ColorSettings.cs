@@ -5,8 +5,8 @@ using UnityEngine;
 /// <summary>
 /// Stores all the values for the settings of the color for the planet and its biomes
 /// </summary>
-[CreateAssetMenu()]
-public class ColorSettings : ScriptableObject
+[System.Serializable]
+public class ColorSettings : MonoBehaviour
 {
     public Material planetMaterial;
     public BiomeColorSettings biomeColorSettings;

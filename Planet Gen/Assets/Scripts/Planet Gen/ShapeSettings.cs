@@ -5,8 +5,8 @@ using UnityEngine;
 /// <summary>
 /// Creates custom editor settings for the designer to utilise
 /// </summary>
-[CreateAssetMenu()]
-public class ShapeSettings : ScriptableObject
+[System.Serializable]
+public class ShapeSettings : MonoBehaviour
 {
     public float planetRadius = 1; // Allows the designer to change the radius of the planet
     public NoiseLayer[] noiseLayers; // Allows user to add or remove noise layers to an array that is applied to the planet

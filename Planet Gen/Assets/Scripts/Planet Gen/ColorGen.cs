@@ -9,6 +9,17 @@ public class ColorGen
     const int textureRes = 50;
     INoiseFilter biomeNoiseFilter;
 
+    MaterialPropertyBlock mpb;
+
+    public MaterialPropertyBlock Mpb
+    {
+        get
+        {
+            if (mpb == null) { mpb = new MaterialPropertyBlock(); }
+            return mpb;
+        }
+    }
+
     public void UpdateSettings(ColorSettings settings)
     {
         this.settings = settings;

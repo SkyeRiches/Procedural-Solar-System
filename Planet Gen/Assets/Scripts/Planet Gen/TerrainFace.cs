@@ -39,6 +39,7 @@ public class TerrainFace
 
         int triIndex = 0;
         // Calculate number of uvs needed based on the length of the vertices array
+
         Vector2[] uv = (mMesh.uv.Length == vertices.Length) ? mMesh.uv : new Vector2[vertices.Length];
 
         // For each vertice that makes up the mesh
