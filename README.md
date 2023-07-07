@@ -9,3 +9,6 @@ Each planet created rotates around the central star and a line renderer plots th
 The planets created are also given a color tint based on how close it is to the central star, blue tint when it is further away and red tint when it is closer. This is used to visualise the temperature of the planet. 
 
 A user running the program is able to click on a planet and focus in on it with the camera following the planet until the user selects another planet or presses a key to stop following the planet. Whilst focusing in on a planet the user is able to tweak the settings of the planet, including the terrain and coloration of the planets surface and color tint.
+
+# Video
+https://www.youtube.com/watch?v=YVV2cc1RQws
